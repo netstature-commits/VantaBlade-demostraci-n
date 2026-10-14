@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BarberShop","name":"Vanta Blade Barber Shop","image":"logo.jpg","telephone":"+59175506397","address":{"@type":"PostalAddress","addressLocality":"La Paz","addressCountry":"BO"},"openingHours":["Mo-Fr 10:00-20:00","Sa 09:00-18:00"]}
+{"@context":"https://schema.org","@type":"BarberShop","name":"Vanta Blade Barber Shop","image":"logo.jpg","telephone":"+59175506397","address":{"@type":"PostalAddress","streetAddress":"1250 Brickell Ave, Suite 4","addressLocality":"Miami","addressRegion":"FL","postalCode":"33131","addressCountry":"US"},"openingHours":["Mo-Fr 10:00-20:00","Sa 09:00-18:00"]}
 </script>
 
 <style>
@@ -270,7 +270,7 @@ header.nav.scrolled{background:rgba(0,0,0,.82);backdrop-filter:blur(14px);-webki
 .field textarea{min-height:90px;resize:vertical}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 fieldset{border:0}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:.6rem}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.6rem}
 .slots input{position:absolute;opacity:0;pointer-events:none}
 .slots label{margin:0;padding:.7rem .3rem;text-align:center;border:1px solid var(--line);cursor:pointer;font-family:var(--sans);letter-spacing:.05em;font-size:.95rem;color:var(--ink);text-transform:none;transition:.2s;border-radius:2px}
 .slots label:hover{border-color:var(--silver)}
@@ -449,7 +449,7 @@ footer a:hover{color:var(--ink)}
   <section class="section price-band">
     <div class="wrap">
       <small>Desde</small>
-      <div class="big metal-text" id="fromPrice">Bs 40</div>
+      <div class="big metal-text" id="fromPrice">$20</div>
       <p>Precios claros. Sin sorpresas. Cortes profesionales.</p>
       <a class="btn btn-primary" href="#/servicios">Ver lista de precios</a>
     </div>
@@ -535,7 +535,7 @@ footer a:hover{color:var(--ink)}
   <div class="wrap" style="padding-bottom:5rem">
     <div class="book">
       <form class="form" id="bookForm" novalidate>
-        <div class="field"><label for="fName">Tu nombre</label><input id="fName" name="name" autocomplete="name" placeholder="Ej. Carlos Mamani" required></div>
+        <div class="field"><label for="fName">Tu nombre</label><input id="fName" name="name" autocomplete="name" placeholder="Ej. Michael Johnson" required></div>
         <div class="field"><label for="fService">Servicio</label><select id="fService" name="service" required></select></div>
         <div class="field"><label for="fDate">Fecha</label><input type="date" id="fDate" name="date" required><div class="err" id="dateErr" role="alert"></div></div>
         <fieldset class="field"><legend>Hora disponible</legend>
@@ -571,7 +571,7 @@ footer a:hover{color:var(--ink)}
         <details><summary>¿Necesito cita o puedo ir sin reserva?</summary><p>Atendemos sin cita según disponibilidad, pero reservar te asegura tu horario y evita esperas.</p></details>
         <details><summary>¿Cómo confirmo mi reserva?</summary><p>Al enviar el formulario se abre WhatsApp con tus datos. Te confirmamos el horario por ese mismo chat.</p></details>
         <details><summary>¿Puedo cambiar o cancelar mi cita?</summary><p>Sí. Escríbenos por WhatsApp con al menos unas horas de anticipación y reprogramamos sin problema.</p></details>
-        <details><summary>¿Qué métodos de pago aceptan?</summary><p>Efectivo y transferencia o QR. Consulta por WhatsApp para confirmar las opciones disponibles.</p></details>
+        <details><summary>¿Qué métodos de pago aceptan?</summary><p>Efectivo, tarjeta y transferencia (Zelle o Cash App). Consulta por WhatsApp para confirmar las opciones disponibles.</p></details>
       </div>
     </div>
   </section>
@@ -599,7 +599,7 @@ footer a:hover{color:var(--ink)}
     <div><h4>Enlaces</h4><ul>
       <li><a href="#/">Inicio</a></li><li><a href="#/servicios">Servicios</a></li><li><a href="#/galeria">Galería</a></li><li><a href="#/reservar">Reservar cita</a></li></ul></div>
     <div><h4>Horarios</h4><ul>
-      <li>Lun – Vie<br>10:00 – 20:00</li><li>Sábado<br>09:00 – 18:00</li><li>Domingo<br>Cerrado</li></ul></div>
+      <li>Lun – Vie<br>10:00 AM – 8:00 PM</li><li>Sábado<br>9:00 AM – 6:00 PM</li><li>Domingo<br>Cerrado</li></ul></div>
     <div><h4>Contacto</h4><ul>
       <li class="addr-text"></li>
       <li><a href="#" data-tel data-phone></a></li>
@@ -624,12 +624,12 @@ footer a:hover{color:var(--ink)}
    ===================================================== */
 const CONFIG = {
   name: 'Vanta Blade Barber Shop',
-  phone: '59175506397',            // código de país (591 = Bolivia) + número
+  phone: '59175506397',            // código de país + número, sin + ni espacios
   phoneDisplay: '+591 75506397',
-  address: 'La Paz, Bolivia',      // pon aquí tu dirección exacta
-  mapQuery: 'La Paz, Bolivia',     // lo que buscará Google Maps
-  timezone: 'America/La_Paz',
-  currency: 'Bs',
+  address: '1250 Brickell Ave, Suite 4, Miami, FL 33131',  // dirección de ejemplo: cámbiala por la real
+  mapQuery: '1250 Brickell Ave, Miami, FL 33131',
+  timezone: 'America/New_York',
+  currency: '$',
   slotMinutes: 45,
   // horario por día (0 = domingo). null = cerrado. [apertura, cierre] en horas
   hours: {0:null,1:[10,20],2:[10,20],3:[10,20],4:[10,20],5:[10,20],6:[9,18]},
@@ -638,12 +638,12 @@ const CONFIG = {
 
 /* Servicios: imagen = servicios-N.jpg */
 const SERVICES = [
-  {id:1, cat:'cabello', name:'Skin Fade',            desc:'Degradado a piel, transiciones limpias y acabado nítido.',            min:45, price:60},
-  {id:2, cat:'cabello', name:'Corte Clásico',        desc:'Corte a tijera y máquina con el largo y la forma que buscas.',         min:40, price:50},
-  {id:3, cat:'barba',   name:'Perfilado de Barba',   desc:'Diseño, contorno y arreglo de barba con navaja.',                      min:30, price:40},
-  {id:4, cat:'barba',   name:'Afeitado con Toalla Caliente', desc:'Afeitado tradicional con vapor, toalla caliente y aftershave.', min:40, price:55},
-  {id:5, cat:'combo',   name:'Corte + Barba',        desc:'El paquete completo: corte de precisión y barba perfilada.',           min:75, price:90},
-  {id:6, cat:'cabello', name:'Diseño y Líneas',      desc:'Líneas, cejas y diseños personalizados para un look único.',           min:30, price:35}
+  {id:1, cat:'cabello', name:'Skin Fade',            desc:'Degradado a piel, transiciones limpias y acabado nítido.',            min:45, price:35},
+  {id:2, cat:'cabello', name:'Corte Clásico',        desc:'Corte a tijera y máquina con el largo y la forma que buscas.',         min:40, price:30},
+  {id:3, cat:'barba',   name:'Perfilado de Barba',   desc:'Diseño, contorno y arreglo de barba con navaja.',                      min:30, price:25},
+  {id:4, cat:'barba',   name:'Afeitado con Toalla Caliente', desc:'Afeitado tradicional con vapor, toalla caliente y aftershave.', min:40, price:35},
+  {id:5, cat:'combo',   name:'Corte + Barba',        desc:'El paquete completo: corte de precisión y barba perfilada.',           min:75, price:55},
+  {id:6, cat:'cabello', name:'Diseño y Líneas',      desc:'Líneas, cejas y diseños personalizados para un look único.',           min:30, price:20}
 ];
 
 /* Galería: galeria-N.jpg */
@@ -660,10 +660,10 @@ const TESTIMONIALS = [
    ===================================================== */
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-const money = n => `${CONFIG.currency} ${n}`;
+const money = n => `${CONFIG.currency}${n}`;
 const DAYS = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const pad = n => String(n).padStart(2,'0');
-const fmtH = (h,m=0) => `${pad(h)}:${pad(m)}`;
+const fmtH = (h,m=0) => `${h%12||12}:${pad(m)} ${h>=12?'PM':'AM'}`;
 const imgTag = (src, alt) => `<div class="ph"><img src="${src}" alt="${alt}" loading="lazy" onerror="this.classList.add('broken')"></div>`;
 
 function nowInTz(){
@@ -803,7 +803,7 @@ fDate.min=nowInTz().date;
 
 function getService(){return SERVICES.find(s=>s.id===+fService.value)}
 function selectedTime(){const r=$('input[name=time]:checked');return r?r.value:''}
-function prettyDate(v){if(!v)return '—';const d=new Date(v+'T12:00:00');return `${DAYS[d.getDay()]} ${d.getDate()}/${pad(d.getMonth()+1)}/${d.getFullYear()}`}
+function prettyDate(v){if(!v)return '—';const d=new Date(v+'T12:00:00');return `${DAYS[d.getDay()]} ${pad(d.getMonth()+1)}/${pad(d.getDate())}/${d.getFullYear()}`}
 
 function buildSlots(){
   const v=fDate.value,err=$('#dateErr');
